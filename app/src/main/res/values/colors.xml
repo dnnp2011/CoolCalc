@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/primary_material_dark</color>
-    <color name="colorPrimaryDark">@color/primary_dark_material_dark</color>
-    <color name="colorAccent">@color/accent_material_dark</color>
-    <color name="colorForeground">@android:color/foreground_material_dark</color>
-    <color name="colorBackground">@android:color/background_material_dark</color>
-    <color name="colorBlack">@android:color/black</color>
-    <color name="colorText">@android:color/primary_text_dark</color>
-    <color name="colorTextInverse">@android:color/primary_text_light</color>
-    <color name="colorTextSecondary">@android:color/secondary_text_dark</color>
-    <color name="colorTextSecondaryInverse">@android:color/secondary_text_light</color>
-    <color name="colorTextTertiary">@android:color/tertiary_text_dark</color>
-    <color name="colorTextTertiaryInverse">@android:color/tertiary_text_light</color>
+    <color name="colorPrimary">#cc4848</color>
+    <color name="colorPrimaryDark">#893232</color>
+    <color name="colorAccent">#d77070</color>
+    <!--<color name="colorForeground">#FFFFFF</color>-->
+    <!--<color name="colorBackground">#2e2e2e</color>-->
+    <color name="colorBlack">#000000</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="colorDarkGrey">#545454</color>
+    <color name="colorTextInverse">#131313</color>
+    <color name="colorTextSecondary">#aaefefef</color>
+    <color name="colorTextSecondaryInverse">#9a131313</color>
+    <color name="colorTextTertiary">#34efefef</color>
+    <color name="colorTextTertiaryInverse">#3b131313</color>
 </resources>
