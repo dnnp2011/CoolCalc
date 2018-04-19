@@ -32,12 +32,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="461dp"
+        android:background="@android:color/white"
         android:orientation="vertical"
+        android:weightSum="4"
         tools:layout_editor_absoluteY="142dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_weight="1"
             android:orientation="horizontal"
             android:weightSum="4">
 
@@ -47,8 +49,10 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="fill"
                 android:layout_weight="1"
+                android:background="@android:color/white"
                 android:text="7"
-                android:textSize="24sp" />
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/numberEight"
@@ -56,8 +60,10 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="fill"
                 android:layout_weight="1"
+                android:background="@android:color/white"
                 android:text="8"
-                android:textSize="24sp" />
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/numberNine"
@@ -65,8 +71,10 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="fill"
                 android:layout_weight="1"
+                android:background="@android:color/white"
                 android:text="9"
-                android:textSize="24sp" />
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="30sp" />
 
             <ImageButton
                 android:id="@+id/divide"
@@ -74,25 +82,131 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="fill"
                 android:layout_weight="1"
+                android:background="#00ffffff"
                 android:src="@drawable/divisionRound_128" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"></LinearLayout>
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/numberFour"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:text="4"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/numberFive"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:text="5"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/numberSix"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:text="6"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="30sp" />
+
+            <ImageButton
+                android:id="@+id/multiply"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00ffffff"
+                android:src="@drawable/multiplyRound_128" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"></LinearLayout>
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <Button
+                android:id="@+id/numberOne"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:text="1"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/numberTwo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:text="2"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/numberThree"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:text="3"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="30sp" />
+
+            <ImageButton
+                android:id="@+id/imageButton6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00ffffff"
+                android:src="@drawable/minusRound_128" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="3">
 
+            <Button
+                android:id="@+id/clear"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorAccent"
+                android:text="Clear"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" />
+
+            <Button
+                android:id="@+id/numberZero"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:text="0"
+                android:textColor="@color/colorDarkGrey"
+                android:textSize="30sp" />
+
+            <ImageButton
+                android:id="@+id/add"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00ffffff"
+                android:src="@drawable/plusRound_128" />
         </LinearLayout>
     </LinearLayout>
 
