@@ -263,6 +263,7 @@
                     android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:background="@color/colorPrimary"
+                    android:onClick="clrClick"
                     android:text="@string/clear"
                     android:textSize="20sp"
                     tools:textAllCaps="false" />
