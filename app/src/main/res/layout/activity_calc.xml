@@ -20,11 +20,21 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/runningFunction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="37dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textAlignment="textEnd"
+            android:textSize="15sp" />
+
+        <TextView
             android:id="@+id/calcResultText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="40dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="3dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:text="@string/defaultResultText"

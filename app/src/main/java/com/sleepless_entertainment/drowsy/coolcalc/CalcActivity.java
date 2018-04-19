@@ -9,16 +9,17 @@ public class CalcActivity extends Activity {
 
 //    TODO: Handle DivideByZero exception
 //    TODO: Allow using multiple expressions
+//    TODO: Limit number input and output
 //    TODO: Display function history
 //    TODO: Add additional functionality: Parenthesis, Decimal, Backspace, Negative Numbers, Order Of Operations, Square Root, Exponents
 //    TODO: End Goal: Graphing Calculator-like functionality
 
 //    Button oneBtn, twoBtn, threeBtn, fourBtn, fiveBtn, sixBtn, sevenBtn, eightBtn, nineBtn, zeroBtn, multBtn, divBtn, addBtn, subBtn, clrBtn, eqlBtn;
-    TextView resultViewer; //TODO: Add second TextView for displaying entire function
+    TextView resultViewer, runningFuncViewer; //TODO: Add second TextView for displaying entire function
 
     boolean readyToClear = false;
-    String firstNum;
-    operation operationType;
+    String firstNum = null;
+    Operation operationType = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,10 +28,11 @@ public class CalcActivity extends Activity {
 
 
         resultViewer = findViewById(R.id.calcResultText);
+        runningFuncViewer = findViewById(R.id.runningFunction);
 //        oneBtn = findViewById(R.id.numberOne);
     }
 
-    private enum operation {
+    private enum Operation {
         ADD, SUBTRACT, MULTIPLY, DIVIDE
     }
 
@@ -44,6 +46,9 @@ public class CalcActivity extends Activity {
             resultViewer.setText(val);
             readyToClear = false;
         }
+        else if (resultViewer.getText().toString().length() >= 14) {
+            return;
+        }
         else {
             resultViewer.setText(resultViewer.getText().toString().concat(val).trim());
         }
@@ -56,22 +61,35 @@ public class CalcActivity extends Activity {
 
     private String evaluateFunc(String secNum) {
         Double result;
-        switch (operationType) {
-            case ADD:
-                result = Double.parseDouble(firstNum) + Double.parseDouble(secNum);
-                break;
-            case SUBTRACT:
-                result = Double.parseDouble(firstNum) - Double.parseDouble(secNum);
-                break;
-            case MULTIPLY:
-                result = Double.parseDouble(firstNum) * Double.parseDouble(secNum);
-                break;
-            case DIVIDE:
-                result = Double.parseDouble(firstNum) / Double.parseDouble(secNum);
-                break;
-            default:
-                result = 0.0d;
-                break;
+
+        try {
+            switch (operationType) {
+                case ADD:
+                    result = Double.parseDouble(firstNum) + Double.parseDouble(secNum);
+                    break;
+                case SUBTRACT:
+                    result = Double.parseDouble(firstNum) - Double.parseDouble(secNum);
+                    break;
+                case MULTIPLY:
+                    result = Double.parseDouble(firstNum) * Double.parseDouble(secNum);
+                    break;
+                case DIVIDE:
+                    if (Double.parseDouble(secNum) == 0d) {
+                        readyToClear = true;
+                        return "Err";
+                    }
+                    result = Double.parseDouble(firstNum) / Double.parseDouble(secNum);
+                    break;
+                default:
+                    result = 0.0d;
+                    break;
+            }
+        }
+        catch (Exception e) {
+            System.out.println("Math Error: " + e);
+            e.printStackTrace();
+            readyToClear = true;
+            return "Err";
         }
 
         if (result - (Math.ceil(result)) < 0) {
@@ -84,7 +102,7 @@ public class CalcActivity extends Activity {
         }
     }
 
-    private void operate(operation type) {
+    private void operate(Operation type) {
 
     }
     //endregion
@@ -132,31 +150,62 @@ public class CalcActivity extends Activity {
     }
 
     public void multClick(View view) {
-        firstNum = resultViewer.getText().toString();
+        if (operationType != null) {
+//            If there's a running operation, evaluate it first
+            firstNum = evaluateFunc(resultViewer.getText().toString());
+            runningFuncViewer.setText(firstNum.concat(" *"));
+        }
+        else {
+            firstNum = resultViewer.getText().toString();
+        }
         resultViewer.setText("0.0");
-        operationType = operation.MULTIPLY;
+        operationType = Operation.MULTIPLY;
     }
 
     public void divClick(View view) {
-        firstNum = resultViewer.getText().toString();
+        if (operationType != null) {
+//            If there's a running operation, evaluate it first
+            firstNum = evaluateFunc(resultViewer.getText().toString());
+            runningFuncViewer.setText(firstNum.concat(" /"));
+        }
+        else {
+            firstNum = resultViewer.getText().toString();
+        }
         resultViewer.setText("0.0");
-        operationType = operation.DIVIDE;
+        operationType = Operation.DIVIDE;
     }
 
     public void addClick(View view) {
-        firstNum = resultViewer.getText().toString();
+        if (operationType != null) {
+//            If there's a running operation, evaluate it first
+            firstNum = evaluateFunc(resultViewer.getText().toString());
+            runningFuncViewer.setText(firstNum.concat(" +"));
+        }
+        else {
+            firstNum = resultViewer.getText().toString();
+        }
         resultViewer.setText("0.0");
-        operationType = operation.ADD;
+        operationType = Operation.ADD;
     }
 
     public void subClick(View view) {
-        firstNum = resultViewer.getText().toString();
+        if (operationType != null) {
+//            If there's a running operation, evaluate it first
+            firstNum = evaluateFunc(resultViewer.getText().toString());
+            runningFuncViewer.setText(firstNum.concat(" -"));
+        }
+        else {
+            firstNum = resultViewer.getText().toString();
+        }
         resultViewer.setText("0.0");
-        operationType = operation.SUBTRACT;
+        operationType = Operation.SUBTRACT;
     }
 
     public void eqlClick(View view) {
         resultViewer.setText(evaluateFunc(resultViewer.getText().toString()));
+        runningFuncViewer.setText("");
+        firstNum = null;
+        operationType = null;
         readyToClear = true;
     }
 
@@ -164,6 +213,7 @@ public class CalcActivity extends Activity {
         firstNum = null;
         operationType = null;
         resultViewer.setText("0.0");
+        runningFuncViewer.setText("");
     }
     //endregion
 }
