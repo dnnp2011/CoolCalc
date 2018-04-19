@@ -2,18 +2,22 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CalcActivity"
     tools:layout_editor_absoluteY="81dp">
 
     <LinearLayout
+        android:id="@+id/resultsWindow"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="0dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/calcResultText"
@@ -30,15 +34,20 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/inputWindow"
         android:layout_width="match_parent"
         android:layout_height="461dp"
         android:background="@android:color/white"
         android:orientation="vertical"
         android:weightSum="4"
-        tools:layout_editor_absoluteY="142dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultsWindow">
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
             android:weightSum="4">
@@ -82,13 +91,14 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="fill"
                 android:layout_weight="1"
-                android:background="#00ffffff"
-                android:src="@drawable/divisionRound_128" />
+                android:background="@android:color/white"
+                android:src="@drawable/division_round_128" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
             android:weightSum="4">
@@ -128,12 +138,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#00ffffff"
-                android:src="@drawable/multiplyRound_128" />
+                android:background="@android:color/white"
+                android:src="@drawable/multiply_round_128" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
             android:weightSum="4">
@@ -169,32 +180,43 @@
                 android:textSize="30sp" />
 
             <ImageButton
-                android:id="@+id/imageButton6"
+                android:id="@+id/subtract"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="#00ffffff"
-                android:src="@drawable/minusRound_128" />
+                android:background="@android:color/white"
+                android:src="@drawable/minus_round_128" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
+            android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal"
-            android:weightSum="3">
+            android:weightSum="4">
 
-            <Button
-                android:id="@+id/clear"
+            <FrameLayout
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/colorAccent"
-                android:text="Clear"
-                android:textColor="@android:color/white"
-                android:textSize="30sp" />
+                android:layout_weight="2">
+
+                <Button
+                    android:id="@+id/clear"
+                    android:layout_width="165dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:background="@color/colorPrimary"
+                    android:capitalize="none"
+                    android:text="Clear"
+                    android:textSize="20sp"
+                    tools:textAllCaps="false" />
+
+            </FrameLayout>
 
             <Button
                 android:id="@+id/numberZero"
                 android:layout_height="match_parent"
+                android:layout_width="0dp"
                 android:layout_weight="1"
                 android:background="@android:color/white"
                 android:text="0"
@@ -204,9 +226,10 @@
             <ImageButton
                 android:id="@+id/add"
                 android:layout_height="match_parent"
+                android:layout_width="0dp"
                 android:layout_weight="1"
-                android:background="#00ffffff"
-                android:src="@drawable/plusRound_128" />
+                android:background="@android:color/white"
+                android:src="@drawable/plus_round_128" />
         </LinearLayout>
     </LinearLayout>
 
@@ -215,6 +238,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="141dp" />
+        app:layout_constraintGuide_begin="150dp" />
 
 </android.support.constraint.ConstraintLayout>
