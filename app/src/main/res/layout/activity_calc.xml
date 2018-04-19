@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/resultsWindow"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="163dp"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,7 @@
             android:layout_marginTop="40dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="0.0"
+            android:text="@string/defaultResultText"
             android:textAlignment="textEnd"
             android:textSize="45sp" />
 
@@ -36,7 +36,7 @@
     <LinearLayout
         android:id="@+id/inputWindow"
         android:layout_width="match_parent"
-        android:layout_height="461dp"
+        android:layout_height="442dp"
         android:background="@android:color/white"
         android:orientation="vertical"
         android:weightSum="4"
@@ -48,6 +48,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:orientation="horizontal"
             android:weightSum="4">
@@ -58,8 +59,12 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="fill"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:text="7"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="sevenClick"
+                android:padding="15dp"
+                android:text="@string/numSeven"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="30sp" />
 
@@ -69,8 +74,12 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="fill"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:text="8"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="eightClick"
+                android:padding="15dp"
+                android:text="@string/numEight"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="30sp" />
 
@@ -80,19 +89,30 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="fill"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:text="9"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="nineClick"
+                android:padding="15dp"
+                android:text="@string/numNine"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="30sp" />
 
             <ImageButton
-                android:id="@+id/divide"
+                android:id="@+id/multiply"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="fill"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:src="@drawable/division_round_128" />
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="@string/divide_button"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="multClick"
+                android:padding="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/multiply_round_128"
+                android:tint="@android:color/transparent" />
 
         </LinearLayout>
 
@@ -108,8 +128,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:text="4"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="fourClick"
+                android:padding="15dp"
+                android:text="@string/numFour"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="30sp" />
 
@@ -118,8 +142,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:text="5"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="fiveClick"
+                android:padding="15dp"
+                android:text="@string/numFive"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="30sp" />
 
@@ -128,18 +156,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:text="6"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="sixClick"
+                android:padding="15dp"
+                android:text="@string/numSix"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="30sp" />
 
             <ImageButton
-                android:id="@+id/multiply"
+                android:id="@+id/divide"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:src="@drawable/multiply_round_128" />
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="@string/multiply_button"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="divClick"
+                android:padding="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/division_round_128" />
         </LinearLayout>
 
         <LinearLayout
@@ -154,8 +192,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:text="1"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="oneClick"
+                android:padding="15dp"
+                android:text="@string/numOne"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="30sp" />
 
@@ -164,8 +206,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:text="2"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="twoClick"
+                android:padding="15dp"
+                android:text="@string/numTwo"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="30sp" />
 
@@ -174,18 +220,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:text="3"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="threeClick"
+                android:padding="15dp"
+                android:text="@string/numThree"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="30sp" />
 
             <ImageButton
-                android:id="@+id/subtract"
+                android:id="@+id/add"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:src="@drawable/minus_round_128" />
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="@string/subtract_button"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="addClick"
+                android:padding="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/plus_round_128" />
         </LinearLayout>
 
         <LinearLayout
@@ -198,7 +254,8 @@
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2">
+                android:layout_weight="2"
+                android:onClick="clrClick">
 
                 <Button
                     android:id="@+id/clear"
@@ -206,8 +263,7 @@
                     android:layout_height="50dp"
                     android:layout_gravity="center"
                     android:background="@color/colorPrimary"
-                    android:capitalize="none"
-                    android:text="Clear"
+                    android:text="@string/clear"
                     android:textSize="20sp"
                     tools:textAllCaps="false" />
 
@@ -215,29 +271,54 @@
 
             <Button
                 android:id="@+id/numberZero"
-                android:layout_height="match_parent"
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:text="0"
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="zeroClick"
+                android:padding="15dp"
+                android:text="@string/numZero"
                 android:textColor="@color/colorDarkGrey"
                 android:textSize="30sp" />
 
             <ImageButton
-                android:id="@+id/add"
-                android:layout_height="match_parent"
+                android:id="@+id/subtract"
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:background="@android:color/white"
-                android:src="@drawable/plus_round_128" />
+                android:background="@android:color/transparent"
+                android:backgroundTint="@android:color/transparent"
+                android:contentDescription="@string/add_button"
+                android:foregroundTint="@android:color/transparent"
+                android:onClick="subClick"
+                android:padding="15dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/minus_round_128" />
         </LinearLayout>
     </LinearLayout>
 
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="150dp" />
+    <ImageButton
+        android:id="@+id/equals"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@android:color/transparent"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/equals_button"
+        android:foregroundTint="@android:color/transparent"
+        android:onClick="eqlClick"
+        android:scaleType="centerCrop"
+        android:src="@drawable/equal_round_128"
+        android:tint="@android:color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/inputWindow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.775"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/inputWindow"
+        app:layout_constraintVertical_bias="0.457" />
 
 </android.support.constraint.ConstraintLayout>

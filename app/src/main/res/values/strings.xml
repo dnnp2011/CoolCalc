@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">CoolCalc</string>
+    <string name="numOne">1</string>
+    <string name="numTwo">2</string>
+    <string name="numThree">3</string>
+    <string name="clear">Clear</string>
+    <string name="numZero">0</string>
+    <string name="numSix">6</string>
+    <string name="numFive">5</string>
+    <string name="numFour">4</string>
+    <string name="numEight">8</string>
+    <string name="numSeven">7</string>
+    <string name="defaultResultText">0.0</string>
+    <string name="numNine">9</string>
+    <string name="divide_button">divide_button</string>
+    <string name="multiply_button">multiply_button</string>
+    <string name="subtract_button">subtract_button</string>
+    <string name="add_button">add_button</string>
+    <string name="equals_button">equals_button</string>
 </resources>
